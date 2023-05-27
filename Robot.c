@@ -1,13 +1,3 @@
-/*                  Esercizio 1: Robot
-
-    Questo programma simula un robot in una stanza, circondato di mura con un'uscita.
-    Il punto fondamentale Ë quello di far uscire il robot dalla stanza attraverso le mosse casuali e quelle "conosciute".
-    In ogni caso il robot non far‡ mai un passo retrocedendo nella posizione precedente
-*/
-
-
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -47,7 +37,7 @@ int direction;
 
 void initrandom()
 {
-	srand(time(NULL));   ///facendo cosÏ questa funzione genera il seme per la rand.
+	srand(time(NULL));   
 }
 
 int casuale_bot(int max)
@@ -60,7 +50,7 @@ int casuale_bot(int max)
 
 int casuale(int max)
 {
-    max = rand()%99 + 1;   ///facendo cosÏ posso ottenere il valore per poter definire se la mossa Ë casuale o scelta.
+    max = rand()%99 + 1; 
 	return max;
 }
 
@@ -110,7 +100,7 @@ int bot_canwalk(int direzione, int robot_y, int robot_x)
 	return 0;
 }
 
-int bot_maxwalk(int direzione, int robot_y, int robot_x) ///mi permette di seguire la strada pi˘ lunga
+int bot_maxwalk(int direzione, int robot_y, int robot_x) ///mi permette di seguire la strada pi√π lunga
 {
 	int max = 0;
 
@@ -167,7 +157,7 @@ int bot_diceluck() ///mi fa capire se devo attivare la funzione BOT_RANDOM o CHO
 	return ( casuale(100) > 30 ) ? BOT_RANDOM : BOT_CHOSEN;
 }
 
-void bot_move(int* robot_y, int* robot_x) ///movimento del robot, indica se uscir‡ un casuale o uno "visto"
+void bot_move(int* robot_y, int* robot_x) ///movimento del robot, indica se uscir√† un casuale o uno "visto"
 {
 	static int oldx = 0;
 	static int oldy = 0;
